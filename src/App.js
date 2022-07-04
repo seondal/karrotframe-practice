@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "karrotframe/lib/index.css";
+import { Navigator, Screen } from "karrotframe";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navigator>
+      <Screen path="/" component={Home} />
+      <Screen path="/detail" component={Detail} />
+    </Navigator>
   );
-}
+};
+
+const Home = () => {
+  return <div>캐롯프레임 연습해보자</div>;
+};
+
+const Detail = () => {
+  return <div>Detail Component</div>;
+};
 
 export default App;
